@@ -47,7 +47,7 @@
         
         <% end %>
       <br>
-      <%= book_comment.user.name %>
+      <%= link_to user_path(book_comment.user) do %><%= book_comment.user.name %><% end %>
       <br>
         <% end %>
              <div class="new-comment">
