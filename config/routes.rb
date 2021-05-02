@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :users,only: [:show,:index,:edit,:update]
+  resources :users,only: [:show,:index,:edit,:update] do
+    member do
+     get :followings, :followers
+    end
+  end
+  
     root to: 'homes#top'
   get 'home/about' => 'homes#about'
   
@@ -13,5 +18,6 @@ Rails.application.routes.draw do
   
   post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
+  
 
 end
