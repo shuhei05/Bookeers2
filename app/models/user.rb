@@ -11,7 +11,7 @@ class User < ApplicationRecord
   validates :introduction, length: { maximum: 50 }
   
   has_many :book_comments, dependent: :destroy
-  validates :comment, presence: true
+  
   
   has_many :favorites, dependent: :destroy
   
