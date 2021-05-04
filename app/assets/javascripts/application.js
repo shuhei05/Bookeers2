@@ -18,9 +18,3 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-
-$(document).ready(function () {
-  $('.hert-1').on('click', function(){
-    $(this).css('color','red');
-  });
-});
