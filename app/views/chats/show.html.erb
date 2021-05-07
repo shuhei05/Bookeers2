@@ -14,19 +14,19 @@
                 <% if chat.user_id == current_user.id %>
                 <tbody>
                   <tr>
-                    <th>
+                    <td>
                       <p style="text-align: left;"><%= chat.message %></p>
-                    </th>
-                    <th></th>
+                    </td>
+                    <td></td>
                   </tr>
                 </tbody>
                 <% else %>
                 <tbody>
                   <tr>
-                    <th></th>
-                    <th>
+                    <td></td>
+                    <td>
                       <p style="text-align: right;"><%= chat.message %></p>
-                    </th>
+                    </td>
                   </tr>
                 </tbody>
                 <% end %>
