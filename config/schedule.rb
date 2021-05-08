@@ -14,15 +14,14 @@ set :environment, :development
 #   runner "MyModel.some_method"
 #   rake "some:great:rake:task"
 # end
-#
-# every 4.days do
-#   runner "AnotherModel.prune_old_records"
-# end
+
 
 every 1.minutes do
 
-# DailyMailerのdaily_notificationメソッド実行
-  runner "DailyMailer.daily_notification"
+# DailyMailerのdaily_emailメソッド実行
+ #runner "DailyMailer.daily_email"
+ runner "Batch::Daily.new.mail"
+ 
 end
 
 # Learn more: http://github.com/javan/whenever
