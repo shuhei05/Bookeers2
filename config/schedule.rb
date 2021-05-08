@@ -16,7 +16,7 @@ set :environment, :development
 # end
 
 
-every 1.minutes do
+every 1.days, at: '9:00 am' do
 
 # DailyMailerのdaily_emailメソッド実行
  #runner "DailyMailer.daily_email"
