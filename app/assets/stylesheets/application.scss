@@ -37,3 +37,16 @@ div {
     margin-bottom: 10px;
   }
 }
+
+.list {
+  width: 200px;
+
+  &__item {
+    font-weight: bold;
+    color: black;
+
+    &--blue {
+      color: blue;
+    }
+  }
+}
