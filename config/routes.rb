@@ -6,9 +6,9 @@ Rails.application.routes.draw do
    :registrations => 'users/registrations',
   }
   resources :users,only: [:show,:index,:edit,:update] do
-    member do
-     get :followings, :followers
-    end
+    resource :relationships, only: [:create, :destroy]
+    get 'followings' => 'relationships#followings', as: 'followings'
+  	get 'followers' => 'relationships#followers', as: 'followers'
   end
   
     root to: 'homes#top'
@@ -21,8 +21,7 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create, :destroy]
   end
   
-  post 'follow/:id' => 'relationships#follow', as: 'follow' # フォローする
-  post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow' # フォロー外す
+
   
 
 end
